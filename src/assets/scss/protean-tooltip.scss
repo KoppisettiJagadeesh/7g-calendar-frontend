@@ -1,0 +1,73 @@
+.tags-tooltip {
+  max-width: 655px;
+  width: fit-content;
+
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #77972c;
+  .label {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background-color: #f1ffd0;
+    padding: 5px 12px;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  .label:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+.tags {
+  width: fit-content;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #77972c;
+
+  .label {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background-color: #f1ffd0;
+    padding: 5px 12px;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  .label:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+.protean-tooltip-tag {
+  border-radius: 4px !important;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1) !important;
+  background-color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: $protean-dark-gray !important;
+  padding: 8px 8px 0 8px !important;
+  &.show {
+    opacity: 1 !important;
+  }
+  &:after {
+    border: none !important;
+  }
+}
+.tags-wrapper {
+  svg {
+    min-width: 15px;
+    min-height: 19px;
+  }
+  svg:hover {
+    path {
+      stroke: $protean-dark-gray;
+    }
+  }
+}

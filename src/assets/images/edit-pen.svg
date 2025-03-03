@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Work-Order-Details-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Work-order---Details---Editing-group-Flow-1-After-editing" transform="translate(-1208.000000, -1484.000000)">
+            <g id="Button-/-Symbol-Small-/-Base" transform="translate(1208.000000, 1484.000000)">
+                <rect id="Rectangle" fill="#F7F9FA" x="0" y="0" width="40" height="40" rx="4"></rect>
+                <g id="Icon-/-Download-file" transform="translate(7.142857, 7.142857)">
+                    <rect id="Rectangle" fill="#D8D8D8" opacity="0" x="0" y="0" width="25.7142857" height="25.7142857"></rect>
+                    <g id="create-24px" transform="translate(4.285714, 4.285714)" fill="#3A4669">
+                        <path d="M0,13.7718968 L0,16.6667328 C0,16.9333624 0.209494713,17.1428571 0.476124348,17.1428571 L3.37096038,17.1428571 C3.49475271,17.1428571 3.61854504,17.0952447 3.70424743,17.0000198 L14.1028032,6.61098657 L10.5318706,3.04005396 L0.142837304,13.4290872 C0.0476124348,13.5243121 0,13.6385819 0,13.7718968 Z M16.8643244,3.84946535 C17.2357014,3.47808836 17.2357014,2.87817168 16.8643244,2.50679469 L14.6360625,0.278532743 C14.2646855,-0.0928442478 13.6647688,-0.0928442478 13.2933918,0.278532743 L11.5507767,2.02114786 L15.1217093,5.59208047 L16.8643244,3.84946535 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

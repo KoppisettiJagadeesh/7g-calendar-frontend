@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Home-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Calendar-page---Month---tooltips" transform="translate(-381.000000, -533.000000)" stroke="#616674" stroke-width="1.2">
+            <g id="Group-4" transform="translate(205.000000, 456.000000)">
+                <g id="Group-3" transform="translate(0.000000, 35.000000)">
+                    <g id="Elements-/-Info-input-Lable-Copy-35" transform="translate(170.000000, 39.000000)">
+                        <g id="Icon-/-Calendar-/--merge" transform="translate(6.000000, 3.000000)">
+                            <circle id="Oval" cx="5" cy="8" r="4"></circle>
+                            <path d="M6.70058536,11.5447998 C7.25502887,11.8355333 7.88608558,12 8.55555556,12 C10.7646946,12 12.5555556,10.209139 12.5555556,8 C12.5555556,5.790861 10.7646946,4 8.55555556,4 C7.98877266,4 7.44952269,4.11788248 6.96098598,4.33046711" id="Path"></path>
+                            <path d="M10.6243789,11.7145844 C11.083989,11.8987069 11.5857209,12 12.1111111,12 C14.3202501,12 16.1111111,10.209139 16.1111111,8 C16.1111111,5.790861 14.3202501,4 12.1111111,4 C11.6725935,4 11.2505573,4.07056508 10.8557381,4.20095954" id="Path" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

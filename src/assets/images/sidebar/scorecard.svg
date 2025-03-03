@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sidebar-icons---Scorecard-icon-V4" transform="translate(-256.000000, -523.000000)">
+            <g id="Group-6" transform="translate(218.000000, 156.000000)">
+                <g id="Group-4" transform="translate(38.000000, 367.000000)">
+                    <rect id="Rectangle" fill="#D8D8D8" opacity="0" x="0" y="0" width="24" height="24"></rect>
+                    <g id="Group-24-Copy-2" transform="translate(4.000000, 1.000000)">
+                        <circle id="Oval" stroke="#616674" stroke-width="1.5" cx="8.11812402" cy="14.7375403" r="4.25"></circle>
+                        <path d="M7.74695708,13.5233612 L8.20170606,12.601923 L8.65645505,13.5233612 C8.80143469,13.8171197 9.08155681,14.0205797 9.40564093,14.0675946 L10.4225337,14.2154237 L9.68657716,14.9327235 C9.45218096,15.1613531 9.34519317,15.4905254 9.40055274,15.8133205 L9.57422981,16.8261428 L8.66473184,16.3479881 C8.37490823,16.1956815 8.02863958,16.1954779 7.73874813,16.3479881 L6.82918232,16.8261428 L7.00285939,15.8135241 C7.0582868,15.490729 6.95136685,15.1614888 6.71676712,14.9326557 L5.98094623,14.2154237 L6.99770335,14.0676625 C7.32185532,14.0205797 7.60197743,13.8171197 7.74695708,13.5233612 L7.74695708,13.5233612 Z" id="Shape" fill="#616674" fill-rule="nonzero"></path>
+                        <path d="M4.02721493,8.82844941 L4.02721493,6.10117668 C4.02721493,5.59909964 4.43422879,5.19208577 4.93630584,5.19208577 L11.2999422,5.19208577 C11.8020192,5.19208577 12.2090331,5.59909964 12.2090331,6.10117668 L12.2090331,8.82844941" id="Path" stroke="#616674" stroke-width="1.5"></path>
+                        <circle id="Oval-Copy" stroke="#616674" stroke-width="2" cx="8.11812402" cy="14.7375403" r="6.72727273"></circle>
+                        <polygon id="Path" stroke="#616674" stroke-width="1.5" stroke-linejoin="round" points="13.2554918 0.498516396 11.1890555 5.09842206 4.55447911 5.09842206 6.8480784 0.480796631"></polygon>
+                        <polygon id="Path" stroke="#616674" stroke-width="1.5" stroke-linejoin="round" transform="translate(4.384766, 2.836441) scale(-1, 1) translate(-4.384766, -2.836441) " points="6.53039946 0.500012385 4.43668448 5.19208577 2.23913195 0.480796631"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

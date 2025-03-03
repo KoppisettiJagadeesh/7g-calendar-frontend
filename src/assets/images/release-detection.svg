@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 18 18" version="1.1">
+  <defs>
+    <polygon id="path-1" points="3.65440252e-17 0 10 0 10 14 3.65440252e-17 14" />
+  </defs>
+  <g id="ATG-Connection-Center-(Remote-Monitoring)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="ATG-Connection-Center-V3---icons-V8" transform="translate(-1188.000000, -706.000000)">
+      <g id="Group-7-Copy-10" transform="translate(1172.000000, 660.000000)">
+        <g id="Group-2-Copy-13" transform="translate(16.000000, 46.000000)">
+          <g id="Group-3" transform="translate(4.000000, 2.000000)">
+            <mask id="mask-2" fill="white">
+              <use xlink:href="#path-1" />
+            </mask>
+            <g id="Clip-2" />
+            <path className="icon-rd-shape" d="M3.65440252e-17,8.97632792 C0.0175614927,7.927477 0.308737313,6.96515163 0.894695332,6.09338346 C2.26010139,4.06204889 3.63021141,2.03381559 4.99891025,0.00465191123 C5.00314382,-0.00155063708 5.01019978,-0.00155063708 5.01427655,0.00465191123 C6.3810938,2.03381559 7.75637819,4.05724191 9.11598268,6.09121257 C10.4868767,8.14208517 10.2417998,10.8712064 8.53080866,12.5674483 C7.44654329,13.6426601 6.1198666,14.0887784 4.59530951,13.9855059 C2.38287504,13.8357144 0.442643695,12.1988619 0.071500363,9.7228046 C0.0346525882,9.47594318 0.0232062582,9.22520517 3.65440252e-17,8.97632792" id="Fill-1" fill="#616674" mask="url(#mask-2)" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

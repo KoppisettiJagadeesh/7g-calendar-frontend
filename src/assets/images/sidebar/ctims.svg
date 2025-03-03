@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Sidebar-icons---LMS,-CTIMS" transform="translate(-255.000000, -668.000000)" stroke="#616674" stroke-width="1.5">
+            <g id="Group-4" transform="translate(218.000000, 156.000000)">
+                <g id="Group-9" transform="translate(37.000000, 512.000000)">
+                    <g id="Icon-/-Left-Nav-/-24-/--Regulatory-library-3" transform="translate(-0.000000, 0.000000)">
+                        <g id="Group-14" transform="translate(3.000000, 2.000000)">
+                            <polygon id="Stroke-1" points="6.91154322 18.9998433 11.0777801 18.9998433 11.0777801 6.2748068 6.91154322 6.2748068"></polygon>
+                            <line x1="6.94152311" y1="9.54721031" x2="11.0013797" y2="9.54721031" id="Stroke-3"></line>
+                            <line x1="6.94380545" y1="15.7599626" x2="11.0137198" y2="15.7599626" id="Stroke-4"></line>
+                            <g id="Group-13">
+                                <polyline id="Stroke-5" points="11.0779348 6.27496354 18 2.44471777 18 14.9746174 11.0779348 19"></polyline>
+                                <polyline id="Stroke-7" points="6.92206519 6.27496354 0 2.44471777 0 14.9746174 6.92206519 19"></polyline>
+                                <path d="M9.03740716,5.22637525 L9.03740716,4.96658467 C9.03740716,4.88155517 9.04320972,4.66800183 9.0815066,4.5386943 C9.16893181,4.2424625 9.19755777,3.8792259 10.3189989,3.24601084 C11.5940143,2.52659077 16.0074402,0 16.0074402,0 L16.0074402,2.33733156" id="Stroke-9"></path>
+                                <path d="M8.96259284,5.22637525 L8.96259284,4.96658467 C8.96259284,4.88155517 8.95679028,4.66800183 8.9184934,4.5386943 C8.83106819,4.2424625 8.80244223,3.8792259 7.6806143,3.24601084 C6.40598566,2.52659077 1.99217299,0 1.99217299,0 L1.99217299,2.33733156" id="Stroke-11"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

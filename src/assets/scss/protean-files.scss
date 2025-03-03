@@ -1,0 +1,392 @@
+.protean-ecabinet {
+  &.dev {
+    background-color: rgb(246, 213, 236);
+  }
+  font-family: Roboto;
+  padding: 22px 32px 83px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #eaeeef;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  .folder-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .folder-title {
+      font-size: 24px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $protean-black;
+    }
+    .shared-till {
+      display: flex;
+      align-items: flex-end;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $protean-black;
+    }
+  }
+}
+.move-modal {
+  // min-height: 576px;
+  .card-body.message {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.47;
+    color: $protean-black;
+  }
+  .folder-list {
+    height: 347px;
+    padding-right: 25px;
+    overflow-y: auto;
+    .load-block {
+      height: 40px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .folder-item {
+      border-top: 1px solid $protean-white;
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
+      font-size: 14px;
+      width: 100%;
+      max-width: 505px;
+      min-height: 36px;
+      color: $protean-black;
+      padding: 5px 8px;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      text-align: left;
+      &.disabled {
+        opacity: 0.5;
+      }
+      svg:first-of-type {
+        margin-right: 8px;
+      }
+      .move-next {
+        height: 24px;
+        width: 24px;
+      }
+      &:hover {
+        background-color: #ebeff4;
+      }
+      &.active {
+        background-color: #ebeff4;
+        .move-next {
+          background-color: #fff;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  .path {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // align-items: center;
+    .arrow-path {
+      margin-top: 4px;
+    }
+    .folder-path-link {
+      height: 31px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background-color: $protean-white;
+      font-size: 13px;
+      font-weight: bold;
+      color: #3a4669;
+      border: none;
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      &:hover {
+        background-color: #e0e8f1;
+      }
+    }
+  }
+}
+.cabinet-actions {
+  margin-bottom: 16px;
+  display: flex;
+  // warning
+  justify-content: flex-end;
+  &.Cabinet {
+    justify-content: flex-start;
+  }
+  .download {
+    .download-icon {
+      fill: #fff;
+    }
+  }
+}
+.cabinet-table {
+  margin-top: 16px;
+  .folder-path {
+    margin-bottom: 16px;
+    .folder-path-link {
+      padding: 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+      background-color: $protean-white;
+      font-size: 13px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #3a4669;
+    }
+  }
+  .cabinet-table-content {
+    position: relative;
+    .loading-block {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .cabinet-table-header {
+      &.loading {
+        opacity: 0.5;
+      }
+      .tr {
+        height: 32px;
+        border-radius: 4px;
+        background-color: $protean-white;
+        .th {
+          padding-left: 20px;
+          font-size: 12px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $protean-dark-gray;
+        }
+      }
+    }
+    .cabinet-table-body {
+      &.loading {
+        opacity: 0.5;
+      }
+      &.isDragActive {
+        border-radius: 4px;
+        border: solid 1px #3f66d4;
+        background-color: $protean-white !important;
+      }
+      .share-error {
+        width: 100%;
+        height: 100%;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .main-text {
+          font-size: 14px;
+          font-weight: 500;
+          color: $protean-black;
+          margin-top: 8px;
+        }
+        .extra-text {
+          font-size: 14px;
+          color: $protean-black;
+        }
+        .or-text {
+          margin: 16px 0;
+        }
+        .protean-link {
+          font-size: 14px;
+          font-weight: bold;
+          color: #3f66d4;
+          margin-left: 12px;
+        }
+      }
+      .no-data-block {
+        width: 100%;
+        height: 100%;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: Roboto;
+        font-size: 24px;
+        font-weight: lighter;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $protean-dark-gray;
+      }
+      .tr {
+        height: 66px;
+        &:hover {
+          background-color: $protean-white;
+        }
+        &.canDrop {
+          background-color: $protean-white;
+        }
+        .td {
+          padding-left: 20px;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $protean-black;
+          .cabinet-download-icon {
+            cursor: pointer;
+            margin-left: 8px;
+            g {
+              fill: #3a4669;
+            }
+          }
+          .file-link {
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $protean-black;
+          }
+          .svg-fill-icon {
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+    .cabinet-pagination {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .protean-tooltip {
+    z-index: 9999;
+    &.show {
+      opacity: 1 !important;
+      box-shadow: 0 2px 6px 0 rgb(0 0 0 / 10%) !important;
+    }
+  }
+}
+
+.buttonIconDropdown {
+  .dropdown-menu > .dropdown-item.disabled-item {
+    color: $protean-gray;
+    cursor: default;
+    &:hover {
+      background-color: unset !important;
+      color: $protean-gray;
+    }
+    #create-24px,
+    #folder_open_black_24dp {
+      fill: $protean-gray;
+    }
+  }
+}
+
+.buttonIconDropdown.row-dot-actions {
+  margin-left: 8px;
+  .dropdown-menu {
+    min-width: unset !important;
+    padding: 13px 0;
+    overflow-y: hidden;
+    &.show > button.dropdown-item {
+      font-size: 13px;
+      font-weight: bold;
+      color: $protean-dark-gray;
+      min-width: unset !important;
+      width: 106px;
+      padding: 4px 16px;
+      &.disabled-item {
+        color: $protean-gray;
+        #create-24px,
+        #folder_open_black_24dp {
+          fill: $protean-gray;
+        }
+      }
+    }
+  }
+}
+
+.move-btn {
+  display: flex;
+  align-items: center;
+  &.disabled {
+    color: $protean-gray;
+    #create-24px,
+    #folder_open_black_24dp {
+      fill: $protean-gray;
+    }
+  }
+}
+
+.copy-link {
+  padding: 12px 0;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.Copied {
+    color: $protean-gray;
+  }
+}
+.disable-icon {
+  path {
+    fill: $protean-gray;
+  }
+}
+
+.search-tooltip {
+  width: 386px;
+  padding: 24px;
+  font-size: 13px;
+  line-height: 1.54;
+  color: $protean-dark-gray;
+  .search-code {
+    padding: 5px 4px 4px;
+    border-radius: 4px;
+    background-color: $protean-white;
+    font-size: 12px;
+    font-weight: bold;
+    color: $protean-dark-gray;
+  }
+  span {
+    &:nth-of-type(3) {
+      display: inline-flex;
+      margin-top: 6px;
+      align-items: baseline;
+    }
+    &:last-of-type {
+      margin-top: 4px;
+      align-items: baseline;
+      display: inline-flex;
+    }
+  }
+}
+
+.rename-body.file {
+  .protean-default-input {
+    width: 90%;
+    margin-right: 3px;
+  }
+  span {
+    font-size: 14px;
+    color: $protean-dark-gray;
+  }
+}

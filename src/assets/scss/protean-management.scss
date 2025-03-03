@@ -1,0 +1,107 @@
+.management {
+  font-family: Roboto;
+  .wo-tbody {
+    word-break: break-all;
+  }
+  .date-disclaimer {
+    color: $protean-gray;
+    margin-top: 10px;
+  }
+
+  .protean-btn {
+    padding: 9px 11px;
+    min-width: fit-content;
+  }
+  .export-button {
+    min-width: 127px;
+  }
+  .equipment-block-title {
+    color: $protean-dark-gray;
+  }
+  .equipment-info-block {
+    &.tank {
+      .atg-item-header {
+        min-width: 150px;
+      }
+    }
+  }
+  .tank-label {
+    color: $protean-dark-gray;
+    border-radius: 15px;
+    background-color: $protean-white;
+    height: 24px;
+    padding: 0 16px;
+    span {
+      color: $protean-gray;
+      margin-right: 4px;
+    }
+  }
+  svg.icon-active {
+    g {
+      path:last-child {
+        fill: $protean-dark-gray;
+      }
+    }
+  }
+}
+
+.delivery-request {
+  width: 418px;
+  max-width: 418px;
+  &.delivery-request-email {
+    width: 664px;
+    max-width: 664px;
+  }
+  h2 {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $protean-black;
+  }
+  .label {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $protean-gray;
+  }
+  .comment-textarea {
+    height: 133px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $protean-black;
+    width: 100%;
+    border-radius: 4px;
+    border: solid 1px #eaeeef;
+    background-color: #ffffff;
+    padding: 16px 12px;
+    resize: none;
+  }
+  .datepicker-block {
+    .single-input::placeholder {
+      font-size: 13px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #c4c7cf;
+    }
+  }
+
+  .user-select::placeholder {
+    color: red;
+  }
+  .protean-default-input::placeholder {
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c4c7cf;
+  }
+}

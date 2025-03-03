@@ -1,0 +1,866 @@
+.mr-12 {
+  margin-right: 12px;
+}
+
+.protean-radio-btn {
+  filter: grayscale(1);
+  width: 14px;
+  height: 14px;
+}
+
+.remove-file {
+  cursor: pointer;
+}
+
+.add-group-modal {
+  font-family: Roboto;
+  .add-group-modal-close-btn {
+    top: 24px;
+    right: 24px;
+    opacity: 0.5;
+    width: 24px;
+  }
+  .m-header {
+    color: $protean-black;
+    margin-bottom: 20px;
+  }
+  .m-footer {
+    button {
+      width: 120px;
+      margin: 0;
+    }
+  }
+  .m-body {
+    .test-table {
+      padding-right: 1px;
+      //margin-top: 32px;
+      max-height: 631px;
+      overflow-y: auto;
+      //display: flex;
+      .extra {
+        height: 40px;
+        align-items: center;
+        .protean-btn {
+          &:disabled {
+            opacity: 0.7;
+            color: unset;
+          }
+          &.pass,
+          &.schedule {
+            color: #fff;
+            width: 120px;
+            background-color: #578ef7;
+          }
+          &.fail {
+            width: 120px;
+            color: #fff;
+            background-color: #d96161;
+          }
+          &.upload {
+            display: flex;
+            align-items: center;
+            svg {
+              g {
+                path {
+                  fill: #3a4669;
+                }
+              }
+            }
+          }
+        }
+        .table-title {
+          font-family: Roboto;
+          font-size: 20px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $protean-black;
+        }
+      }
+
+      .main-table {
+        border-spacing: 0;
+        width: 100%;
+
+        .protean-pagintaion {
+          margin: 16px 0;
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .wo-thead {
+          .wo-tr {
+            .wo-th {
+              font-size: 13px;
+              font-weight: bold;
+              color: $protean-dark-gray;
+              position: relative;
+            }
+
+            .date-filter {
+              display: none;
+
+              &.date {
+                display: block;
+
+                .picker {
+                  position: absolute;
+                  top: 5px;
+                  left: 7px;
+                  display: none;
+                  z-index: 9;
+
+                  .close-picker {
+                    display: none;
+
+                    &.show {
+                      display: block;
+                      position: absolute;
+                      top: 5px;
+                      right: 10px;
+                    }
+                  }
+
+                  &.true {
+                    display: block;
+
+                    .datepicker-block {
+                      .icon {
+                        display: none;
+                      }
+
+                      input {
+                        width: 98%;
+                        height: 26px;
+                        padding-left: 6px;
+                        // width: inherit;
+                        // height: inherit;
+                      }
+
+                      .custom-picker {
+                        top: 25px;
+                      }
+                    }
+                  }
+
+                  .sortNone {
+                    display: block;
+                    position: absolute;
+                    top: 5px;
+                    right: 28px;
+                  }
+
+                  .sortUp {
+                    display: block;
+                    position: absolute;
+                    top: 5px;
+                    right: 28px;
+                    margin-bottom: 0 !important;
+                  }
+
+                  .sortDown {
+                    display: block;
+                    position: absolute;
+                    top: 5px;
+                    right: 28px;
+                    margin-top: 0 !important;
+                  }
+                }
+              }
+            }
+
+            .filter-select.date {
+              display: none;
+            }
+
+            .hide {
+              display: none;
+            }
+          }
+        }
+
+        .wo-tr {
+          border-radius: 4px;
+          background-color: $protean-white;
+          align-items: center;
+          user-select: none;
+          margin-bottom: 2px;
+        }
+
+        .wo-tbody {
+          font-size: 12px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $protean-dark-gray;
+
+          .no-records {
+            height: 150px;
+            display: flex;
+            align-items: center;
+          }
+        }
+
+        .wo-th {
+          height: 32px;
+          padding-left: 18px;
+        }
+
+        .sub-table {
+          margin-top: 7px;
+          margin-bottom: 24px;
+
+          .wo-th {
+            font-family: Roboto;
+            font-size: 12px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $protean-gray;
+          }
+
+          .wo-tbody {
+            .wo-tr {
+              background-color: transparent;
+              &.new {
+                background-color: $protean-white;
+              }
+            }
+          }
+
+          .wo-td {
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $protean-black;
+
+            .actions {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              width: 100%;
+
+              .protean-btn {
+                height: 32px;
+                &:disabled {
+                  opacity: 0.7;
+                }
+              }
+              .review-download-dropdown {
+                display: flex;
+                position: relative;
+                button {
+                  min-width: 32px !important;
+                  font-size: 14px;
+                  font-weight: 500;
+                  font-stretch: normal;
+                  font-style: normal;
+                  line-height: normal;
+                  letter-spacing: normal;
+                  color: #fff;
+                  border: none !important;
+                  background-color: $protean-white !important;
+                  &.dropdown-toggle:after {
+                    margin-left: auto;
+                  }
+                  &:hover {
+                    background-color: #f0f2f4 !important;
+                  }
+                  &.reportBtn {
+                    height: 32px;
+                    width: 32px;
+                    border-radius: 4px !important;
+                    background-color: $protean-white;
+                    border: none;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                  }
+                  &.dropdown-item {
+                    border: none !important;
+                    padding-left: 10px;
+                    padding-right: 0;
+                    background-color: $protean-white;
+                    min-width: 198px !important;
+                    color: $protean-dark-gray;
+                  }
+                  &.dropdown-item:hover {
+                    background-color: #f0f2f4 !important;
+                    color: $protean-dark-gray;
+                  }
+                }
+                .dropdown-menu {
+                  min-width: 200px !important;
+                  top: 100%;
+                  background-color: $protean-white !important;
+                  border-radius: 4px !important;
+                  border: none;
+                  margin-top: 0;
+                  max-height: 100px;
+                  overflow-y: scroll;
+                  &::-webkit-scrollbar {
+                    width: 3px;
+                    height: 56px;
+                  }
+                  &::-webkit-scrollbar-thumb {
+                    border-radius: 3.5px;
+                    background-color: #f0f2f4;
+                  }
+                }
+              }
+            }
+
+            .cell {
+              font-family: Roboto;
+              font-size: 12px;
+              font-weight: bold;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: normal;
+              letter-spacing: normal;
+              color: $protean-gray;
+              border-radius: 15px;
+              background-color: $protean-white;
+              padding: 5px 9px;
+              padding: 5px 9px;
+
+              .color-status {
+                display: none;
+              }
+
+              &.pending {
+                display: flex;
+                align-items: center;
+
+                .color-status {
+                  border-radius: 50%;
+                  display: inline-flex;
+                  margin-right: 5px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: #efc675;
+                }
+              }
+            }
+          }
+        }
+
+        .wo-td {
+          min-height: 48px;
+          position: relative;
+          padding-left: 18px;
+          align-items: center;
+
+          .protean-status-badge {
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $protean-gray;
+            background-color: $protean-white;
+
+            .crc {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              display: inline-flex;
+              margin-right: 8px;
+
+              &.overdue {
+                background-color: #dc6e6e;
+              }
+
+              &.fail,
+              &.failed {
+                background-color: #dc6e6e;
+              }
+
+              &.upcoming {
+                background-color: #efc675;
+              }
+
+              &.test {
+                background-color: #efc675;
+              }
+
+              &.retest {
+                background-color: #efc675;
+              }
+
+              &.pass {
+                background-color: #bcd87a;
+              }
+
+              &.planned {
+                background-color: #bcd87a;
+              }
+            }
+          }
+
+          .wo-badge {
+            font-family: Roboto;
+            font-size: 12px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $protean-gray;
+            padding: 5px 9px;
+            border-radius: 15px;
+            background-color: #eaeeef;
+          }
+
+          .expanded-icon {
+            &.true {
+              transform: rotate(90deg);
+            }
+          }
+
+          .big-Dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            background-color: #eaeeef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .sub-dot {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+
+              &.\31 {
+                background-color: #dc6e6e;
+              }
+
+              &.\32 {
+                background-color: #efc675;
+              }
+
+              &.\33 {
+                background-color: #bcd87a;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-toggle.issue.reportBtn {
+  background-color: transparent !important;
+  border: none !important;
+  color: #578ef7 !important;
+  padding: 0 !important;
+  font-weight: bold !important;
+  &:after {
+    margin-left: 8px !important;
+  }
+  &:hover,
+  &:focus {
+    background-color: transparent !important;
+    border: none !important;
+    color: #578ef7 !important;
+    box-shadow: none !important;
+  }
+}
+
+.dropdown-menu.issue.user {
+  right: 0;
+  left: unset;
+  .assign_user {
+    width: 320px;
+  }
+}
+
+.protean-base-item {
+  .site-address {
+    color: $protean-gray;
+    margin-bottom: 12px;
+  }
+  .logs-list {
+    max-height: 235px;
+    overflow-y: auto;
+    position: relative;
+  }
+  .occurences-list {
+    max-height: 340px;
+    overflow-y: auto;
+  }
+  &.issuev2 {
+    .details-cell {
+      font-size: 14px !important;
+      font-weight: normal !important;
+      color: $protean-black !important;
+    }
+    .Collapsible__contentInner {
+      .issue-details {
+        margin-top: 24px;
+      }
+    }
+    .item-block {
+      .row-item {
+        width: -moz-available;
+      }
+    }
+    .item-block.occurrences {
+      .row-item.occurrences {
+        .title {
+          font-size: 14px;
+          font-weight: bold;
+          color: $protean-black;
+        }
+      }
+    }
+    .item-block.details-logs {
+      .log-item {
+        .report {
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 4px;
+          left: 265px;
+        }
+        &:nth-of-type(2) {
+          margin-top: 24px;
+        }
+        margin-left: 57px;
+      }
+    }
+    .change-status-dropdown {
+      top: 27px !important;
+    }
+    .issue-details {
+      /* .header-details .header { */
+      /*   font-size: 13px; */
+      /*   font-weight: bold; */
+      /*   color: $protean-dark-gray; */
+      /* } */
+      .header-details {
+        margin-bottom: 0;
+      }
+      .main-details:nth-of-type(2) {
+        .details-cell {
+          padding-top: 0px;
+        }
+      }
+      .action-text {
+        font-size: 14px;
+        font-weight: bold;
+        color: #578ef7;
+        border: none;
+        background: transparent;
+      }
+    }
+    .block-title {
+      &.main {
+        width: calc(100% - 460px);
+      }
+      .atg-section {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        font-size: 14px;
+        font-weight: bold;
+        color: $protean-dark-gray;
+        .date {
+          font-size: 14px;
+          font-weight: normal;
+          color: $protean-black;
+          margin-right: 16px;
+        }
+        .wo-badge-wrapper-oval {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .wo-badge-status-oval {
+            margin: 0;
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+      &.wo-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: $protean-black;
+        a {
+          font-size: 16px;
+          font-weight: 500;
+          color: #578ef7;
+        }
+      }
+      &.muted {
+        font-size: 16px;
+        font-weight: 500;
+        color: $protean-gray;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+.delete-group-icon {
+  path {
+    fill: #d96161;
+  }
+}
+
+.complete-button {
+  width: 150px;
+}
+
+.complete-modal {
+  width: 684px;
+  max-width: 684px;
+  font-family: Roboto;
+  &.complete-modal-sent {
+    svg {
+      margin: 0 auto;
+    }
+  }
+  &.close-modal {
+    width: 581px;
+  }
+  h2 {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $protean-black;
+  }
+  .confirmation {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: $protean-black;
+  }
+  .protean-btn-default {
+    width: 120px;
+  }
+  .info-note {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $protean-black;
+  }
+  .file-name {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: inherit;
+    letter-spacing: normal;
+    color: $protean-black;
+  }
+  .label {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $protean-gray;
+  }
+  .comment-textarea {
+    height: 133px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $protean-black;
+    border-radius: 4px;
+    border: solid 1px #eaeeef;
+    background-color: #ffffff;
+    padding: 16px 12px;
+    resize: none;
+  }
+
+  .datepicker-block {
+    .single-input::placeholder {
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #c4c7cf;
+    }
+  }
+  .protean-default-input::placeholder {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c4c7cf;
+  }
+}
+
+#react-cool-portal {
+  .custom-picker.complete-date-picker {
+    z-index: 999;
+    padding: 8px;
+    padding-top: 34px;
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 302px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    border: solid 1px #eaeeef;
+    background-color: #ffffff;
+    &.show {
+      display: block;
+    }
+    .showButtons {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+      .protean-btn {
+        width: 120px;
+        margin-left: 16px;
+      }
+    }
+    .datepicker-week-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .datepicker-months {
+      display: flex;
+      justify-content: space-between;
+      .datepicker-block {
+        width: 285px;
+        .datepicker-nav {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-content: center;
+          margin-bottom: 25px;
+          .datepicker-nav-button {
+            display: flex;
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            &.hide-nav {
+              visibility: hidden;
+            }
+          }
+          .datepicker-month-title {
+            align-self: center;
+            font-size: 16px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: $protean-black;
+          }
+        }
+        .datepicker-week-day {
+          font-size: 14px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.57;
+          letter-spacing: normal;
+          text-align: center;
+          color: $protean-dark-gray;
+          width: 40px;
+        }
+        .datepicker-month-picker {
+          width: 60px;
+          height: 32px;
+        }
+        .datepicker-days-block {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          .datepicker-day {
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.57;
+            letter-spacing: normal;
+            text-align: center;
+            color: $protean-black;
+            width: 40px;
+            height: 32px;
+            &.datepicker-month-picker {
+              width: 77px;
+              height: 50px;
+              &.selected:hover {
+                background-color: #bcd87a;
+              }
+              &:hover {
+                background-color: $protean-white;
+              }
+            }
+            &.selected {
+              border-radius: 4px;
+              background-color: #bcd87a;
+              &.range {
+                background-color: #bcd87a;
+              }
+            }
+            &.range {
+              background-color: $protean-white;
+            }
+            &.in-list {
+              background-color: $protean-white;
+            }
+            &:disabled,
+            &[disabled] {
+              opacity: 0.5;
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+    &.range {
+      width: 720px;
+      &.single {
+        width: auto;
+      }
+    }
+  }
+}

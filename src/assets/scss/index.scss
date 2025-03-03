@@ -1,0 +1,58 @@
+@import './protean-colors.scss';
+@import './protean-typography.scss';
+@import './protean-indents.scss';
+@import './main.scss';
+@import './protean-helpers';
+@import './protean-tests';
+@import './protean-scorecard';
+@import './protean-policy';
+@import './protean-files';
+@import './protean-notification';
+@import './protean-vendors';
+@import './protean-calendar';
+@import './protean-map.scss';
+@import './protean-deficiencies-analytics';
+@import './protean-issue.scss';
+@import './protean-routing-gantt';
+@import './protean-periodic-overview';
+@import './protean-dashboard.scss';
+@import './protean-management.scss';
+@import './protean-workorder.scss';
+@import './protean-tooltip.scss';
+@import './protean-atg.scss';
+@import './protean-facility.scss';
+@import './protean-invoices.scss';
+@import './protean-jobs.scss';
+@import './prime-react.scss';
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.magic-button {
+  margin-left: 32px;
+
+  button.reportBtn {
+    background-color: #bcd87a !important;
+
+    &:hover {
+      background-color: #a1bc62 !important;
+    }
+
+    span {
+      width: 100%;
+    }
+
+    svg>path {
+      fill: #fff;
+    }
+  }
+}
+
+.protean-sidebar {
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-color: #eaeeef !important;
+  border-width: 1px !important;
+}

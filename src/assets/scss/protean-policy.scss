@@ -1,0 +1,102 @@
+.protean-policy {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #eaeeef;
+  background-color: #ffffff;
+  .header {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $protean-black;
+    padding: 42px 0 32px 32px;
+  }
+  .date {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: $protean-dark-gray;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 33px;
+  }
+  .content-policy {
+    padding: 24px 94px 60px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    text-align: justify;
+    color: $protean-dark-gray;
+    a {
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: right;
+      color: #3f66d4;
+    }
+    p {
+      margin-top: 16px;
+      margin-bottom: 0;
+      &.desc {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.57;
+        letter-spacing: normal;
+        text-align: justify;
+        color: $protean-dark-gray;
+        margin-bottom: 8px;
+      }
+    }
+    ul {
+      list-style-image: url('../images/oval.svg');
+      li {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.57;
+        letter-spacing: normal;
+        text-align: justify;
+        color: $protean-dark-gray;
+        margin-bottom: 8px;
+        ul {
+          list-style-image: url('../images/oval2.svg');
+        }
+      }
+    }
+    .policy-title {
+      font-family: Roboto;
+      font-size: 19px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $protean-dark-gray;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      &.main {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

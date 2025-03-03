@@ -1,0 +1,312 @@
+.invoice-review-modal {
+  &.comment-modal {
+    .m-body {
+      height: 310px;
+    }
+  }
+  .m-body {
+    height: 800px;
+  }
+  &.billing_code_modal {
+    .m-header {
+      padding: 32px 32ps 24px 32px;
+    }
+    .m-body {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 1px 32px 24px 32px;
+      .save-btn {
+        width: 130px;
+      }
+    }
+  }
+  .custom-close-btn {
+    right: 24px;
+    top: 34px;
+  }
+  .invoice-review-header {
+    display: flex;
+    align-items: center;
+    padding: 26px 32px 18px 32px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    .btns-review {
+      margin-right: 32px;
+      .protean-btn {
+        width: 150px;
+        &.disapproved {
+          background-color: #d96161;
+          margin-left: 12px;
+          &:hover {
+            background-color: #be5050;
+          }
+          &:disabled {
+            background-color: #a4a8b1;
+          }
+        }
+      }
+    }
+  }
+  .invoice-review-body {
+    &.comment-body {
+      height: auto;
+      padding: 6px 32px 32px 32px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .label-comment {
+        color: #a4a8b1;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 8px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 31px;
+        resize: none;
+        border: 1px solid #eaeeef;
+        border-radius: 4px;
+      }
+      .protean-btn {
+        margin-left: auto;
+        width: 120px;
+        &.disapproved {
+          width: 130px;
+          margin-left: 8px;
+          background-color: #d96161;
+          margin-left: 12px;
+          color: #fff;
+          &:hover {
+            background-color: #be5050;
+          }
+          &:disabled {
+            background-color: #a4a8b1;
+          }
+        }
+      }
+    }
+    display: flex;
+    .divider {
+      margin-top: 20px;
+      height: 5px;
+      background: #f7f9fa;
+      width: 100%;
+    }
+    .pdf-block {
+      height: -webkit-fill-available;
+      .pdf-protean-viewer {
+        height: inherit;
+      }
+    }
+    .info {
+      padding: 0 24px;
+      /* padding-right: 10px; */
+      /* margin-right: 12px; */
+      width: 35%;
+      min-width: 390px;
+      max-width: 600px;
+      overflow: auto;
+      .invoice-form {
+        .datepicker-block {
+          .icon {
+            display: none;
+          }
+        }
+        textarea {
+          border: solid 1px #eaeeef;
+          padding: 10px 16px;
+          resize: none;
+        }
+        .hack-input-to-mask {
+          position: relative;
+          &:before {
+            content: '$';
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          .protean-default-input.input-amount {
+            padding-left: 25px;
+          }
+        }
+      }
+
+      .invoice-data {
+        padding-top: 1px;
+        position: relative;
+        .edit-btn {
+          position: absolute;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          right: 0;
+        }
+        padding-left: 8px;
+        display: flex;
+        flex-direction: row;
+        .invoice-data-headers {
+          .invoice-data-header {
+            margin-bottom: 9px;
+            min-height: 14px;
+          }
+          width: 32%;
+          color: #a4a8b1;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        .invoice-data-values {
+          .invoice-data-value {
+            margin-bottom: 8px;
+            min-height: 14px;
+          }
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          width: 68%;
+        }
+      }
+
+      #log-list-group {
+        .Collapsible {
+          .Collapsible__trigger .block-title.collapsible-title {
+            padding: 21px 0;
+            color: #24272a;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+          .Collapsible__contentInner {
+            position: relative;
+          }
+          .logs-list {
+            .log-item {
+              margin-left: 20px;
+              margin-bottom: 20px;
+              position: relative;
+              .log-circle {
+                position: absolute;
+                border-radius: 50%;
+                left: -20px;
+                top: 5px;
+                width: 13px;
+                height: 13px;
+                border: solid 2px #7a86a9;
+                background-color: #ffffff;
+              }
+
+              .log-header {
+                display: flex;
+                justify-content: space-between;
+                .protean-badge.round {
+                  margin-right: 10px;
+                  color: #a4a8b1;
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: normal;
+                  display: inline-flex;
+                  align-items: center;
+                  padding: 5px 12px 5px 6px;
+                  height: unset;
+                  .crc {
+                    display: inline-flex;
+                    height: 10px;
+                    width: 10px;
+                    margin-right: 10px;
+                    border-radius: 50%;
+                    &.green {
+                      background-color: #bfe85f;
+                    }
+                    &.red {
+                      background-color: #d96161;
+                    }
+                  }
+                }
+                .log-date {
+                  color: #24272a;
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: normal;
+                  display: flex;
+                  align-items: center;
+                }
+                .log-user {
+                  color: #a4a8b1;
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: normal;
+                  display: flex;
+                  align-items: center;
+                }
+              }
+              .log-comment {
+                word-break: break-word;
+              }
+            }
+          }
+        }
+      }
+    }
+    .pdf-block {
+      width: 80%;
+    }
+  }
+}
+
+.invoice-page {
+  .action-cell-fix {
+    min-width: 180px !important;
+    max-width: 165px;
+  }
+  .review-btn {
+    height: 32px;
+  }
+  .action-btn {
+    height: 32px;
+    min-width: 32px !important;
+  }
+  .reset-btn.stick-to-the-side-with-margin {
+    /* margin-right: 45px; */
+  }
+
+  .table-content .wo-table.wo-track .wo-tbody .wo-tr {
+    color: #24272a;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &.no-group {
+      background-color: unset !important;
+      margin-bottom: 0;
+      margin-top: 5px;
+      padding-bottom: 5px;
+    }
+    &.remove-margin {
+      // margin-top: -5px;
+    }
+  }
+  .invoice_sub_table {
+    padding: 0 24px;
+    .extra {
+      display: none;
+    }
+    .table-content .wo-table .wo-tbody .wo-tr {
+      background-color: unset !important;
+    }
+  }
+}

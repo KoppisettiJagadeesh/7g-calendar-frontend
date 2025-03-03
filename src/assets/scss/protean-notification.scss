@@ -1,0 +1,98 @@
+.protean-notifications {
+  .header {
+    padding: 39px 0 0px 32px;
+    .title {
+      font-family: Roboto;
+      font-size: 24px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $protean-black;
+    }
+    .search-input {
+      margin-top: 32px;
+      max-width: 580px;
+      position: relative;
+      .btns {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        right: 12px;
+        top: 0;
+        height: 38px;
+
+        .searchIcon {
+          .search-icon-path {
+            fill: $protean-gray;
+          }
+        }
+
+        .protean-btn {
+          height: 32px;
+          width: 32px;
+          padding: 0;
+          margin-left: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .notifications-block {
+    .spacer {
+      height: 5px;
+      width: 1004;
+      background-color: #f7f9fa;
+      &:last-of-type {
+        display: none;
+      }
+    }
+    .noMatch {
+      padding: 32px;
+      font-size: 20px;
+      font-weight: 300;
+      color: $protean-black;
+      text-align: center;
+    }
+    .Collapsible {
+      margin: 32px 0;
+      padding: 0 32px;
+      .collapsible-title {
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 500;
+        color: $protean-black;
+        cursor: pointer;
+      }
+      .Collapsible__contentInner {
+        margin-top: 8px;
+        .media-body {
+          margin-top: 24px;
+          padding: 0 32px;
+          font-size: 15px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $protean-black;
+          .form-check {
+            padding-left: 15px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            .form-check-label {
+              font-weight: normal;
+              .protean-checkbox {
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

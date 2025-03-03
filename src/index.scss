@@ -1,0 +1,17 @@
+@import 'assets/scss/index.scss';
+
+div#root {
+  min-height: calc(100vh - 3.12503rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 1275px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.display-block {
+  display: block !important;
+}
