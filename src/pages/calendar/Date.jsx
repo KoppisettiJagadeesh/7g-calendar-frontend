@@ -2,12 +2,15 @@ import { Button } from 'primereact/button';
 import React, { useContext, useState, useRef } from 'react'
 import { CalendarContext } from './Calendar.Context';
 import { OverlayPanel } from 'primereact/overlaypanel';
+import { Dialog } from 'primereact/dialog';
 function Date(props) {
+    const moment = require("moment");
     const { calendarType } = useContext(CalendarContext);
     const [tooltip, setTooltip] = useState('');
-    const { data } = props;
+    const { dayDate,data } = props;
     const panelRef = useRef(null);
-
+    const [weekData] = useState(data);
+    const [visible, setVisible] = useState(false);
     const getEventType = (client) => {
         let count = false, items = Object.values(client?.items);
         items?.forEach(element => {
@@ -56,19 +59,28 @@ function Date(props) {
         const tooltipText = e.target.closest('[data-tip]').getAttribute('data-tip');
         setTooltip(JSON.parse(tooltipText));
         panelRef.current?.show(e, e.target);
+        const showOverLay = () => {
         const overlayPanel = document.getElementById("event-info");
         if (overlayPanel) {
-            overlayPanel.style.left = e.clientX + 18 + "px"
-            overlayPanel.style.top = e.clientY - 15 + "px"
+            // overlayPanel.style.left = e.clientX + 18 + "px"
+            // overlayPanel.style.top = e.clientY - 15 + "px"
             overlayPanel.style.opacity = 1
         }
+    }
+        setTimeout(showOverLay, 100)
     };
 
     const handleMouseOut = (e) => {
         e.isDefaultPrevented();
         panelRef.current?.hide();
     };
-
+   const Header =()=>{
+    return(
+        <div className ="card-header header-elements-inline">
+        <div className="card-title">{moment(dayDate).format("dddd, MMMM YY")}</div>
+       </div>
+    )
+   }
     return (
         <>
             <div className={`calendar-body ${calendarType?.name}`}>
@@ -116,12 +128,22 @@ function Date(props) {
                     <div className='facility-row'>
                         <div className='calendar-item'>
                             {
-                                Object.values(data).length > 6 && <button type="button" className='proteam-btn'>View more</button>
+                                Object.values(data).length > 6 && <Button type="button" className='proteam-btn' onClick = {()=>setVisible(true)}>View more</Button>
                             }
                         </div>
                     </div>
                 </div>
             </div>
+            <Dialog header={Header} visible={visible} style={{ width: '50vw' }} onHide={() => {if (!visible) return; setVisible(false); }}>
+                <div className ="card mb-0 flex-fill base-modal">
+                <div className ="card-body events">
+                 <div className ="search-input">
+                  <input className="protean-default-input" placeholder="Search" type="text"></input>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><g fill="none" fill-rule="evenodd"><path d="M0 0L20 0 20 20 0 20z"></path><path class="search-icon-path" fill="#616674" d="M12.917 11.667h-.659l-.233-.225c.817-.95 1.308-2.184 1.308-3.525 0-2.992-2.425-5.417-5.416-5.417C4.925 2.5 2.5 4.925 2.5 7.917c0 2.991 2.425 5.416 5.417 5.416 1.341 0 2.575-.491 3.525-1.308l.225.233v.659l4.166 4.158 1.242-1.242-4.158-4.166zm-5 0c-2.075 0-3.75-1.675-3.75-3.75s1.675-3.75 3.75-3.75 3.75 1.675 3.75 3.75-1.675 3.75-3.75 3.75z"></path></g></svg>
+                 </div>
+                </div>
+                </div>
+            </Dialog>
         </>
     )
 }

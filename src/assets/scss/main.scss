@@ -71,7 +71,8 @@ body {
 }
 
 .week-card {
-  height: 500px;
+  min-height: 150px;
+  max-height: 580px;
   border: 1px solid #eaeeef;
   margin-top: 10px;
   padding: 7.5px 3.5px;

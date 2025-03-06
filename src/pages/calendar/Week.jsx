@@ -27,15 +27,15 @@ const Week = () => {
                     {weekDays?.map((day, index) => (
                         <div key={index} className="calendar-header mb-1">
                             <div className="calendar-col">
-                                <div className="d-inline-flex ml-8">
+                                <div className="d-inline-flex">
                                     <a className={`${getIsCurrent(day?.date)} active`}> {day?.day}</a>
                                 </div>
                             </div>
                         </div>
                     ))}
-                    {Object.values(WeekData)?.map((day, index) => (
+                    {Object.entries(WeekData)?.map(([key,day]) => (
                         <div key={day?.id} className="week-card">
-                            <Date key={day?.id} data={day} ></Date>
+                            <Date key={day?.id} dayDate={key} data={day} ></Date>
                         </div>
                     ))}
             </div>
