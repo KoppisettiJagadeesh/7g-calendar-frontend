@@ -1,3 +1,4 @@
+@import "./protean-colors.scss";
 body {
   min-height: 100vh;
   display: flex;
@@ -62,6 +63,197 @@ body {
   line-height: inherit;
   padding: 9px 20px;
   text-align: center;
+}
+
+.calendar-left-side {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+
+    .current {
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        text-align: center;
+        color: $protean-black;
+        margin: 0 11px;
+    }
+
+    .reset-btn {
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: right;
+        color: #3f66d4;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .week {
+        margin: 0 9px 0 12px;
+        padding: 5px 9px;
+        border-radius: 15px;
+        background-color: $protean-white;
+        font-size: 12px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: $protean-gray;
+    }
+}
+
+.custome-calender-group {
+    border: 1px solid rgb(234, 238, 239);
+    border-radius: 4px;
+    cursor: text;
+}
+
+.custome-calender-group:hover {
+    border: 1px solid #7A86A9;
+}
+
+#calenderGroup .p-inputtext {
+    font-size: 13px;
+    color: #6c6c6c;
+    background: #ffffff;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    appearance: none;
+    outline-color: transparent;
+}
+
+#calenderGroup .p-component {
+    font-size: 13px;
+}
+
+.custom-picker-protean {
+    z-index: 9999;
+    background: transparent;
+    position: absolute !important;
+}
+
+.range {
+    width: 700px !important;
+    transform: translate(25%, 2%);
+    // transform: translate(-25%, 2%);
+}
+
+.protean-btn {
+    background-color: #f7f9fa;
+    border: none;
+    border-radius: 4px;
+    color: #3a4669;
+    font-size: 13px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 700;
+    height: 39px;
+    letter-spacing: normal;
+    line-height: inherit;
+    padding: 9px 50px;
+    text-align: center;
+}
+
+.protean-btn-default {
+    background-color: #578ef7;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 13px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: normal;
+    padding: 12px 50px;
+    text-align: center;
+    margin-right: 12px;
+}
+
+.p-calendar .p-datepicker {
+    max-width: 100%;
+}
+
+.custom-picker-protean .p-datepicker .p-datepicker-group-container .p-datepicker-group {
+    width: 311px !important;
+}
+
+// Datepicker Header 
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+    color: #24272a;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.p-datepicker table th {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+}
+
+.p-datepicker table th>span {
+    width: 2.0rem;
+    height: 2.1rem;
+    color: var(--protean-dark-gray) !important;
+    font-weight: 600;
+    line-height: 1.57;
+    font-size: 14px;
+}
+
+.p-datepicker table td {
+    padding: 0px;
+    // background-color: yellow;
+}
+
+.p-datepicker table td>span {
+    width: 2.0rem;
+    height: 2.1rem;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    transition: box-shadow 0.3s;
+    border: 1px solid transparent;
+    width: 100% !important;
+}
+
+.p-datepicker table td>span.p-highlight {
+    color: #585858;
+    background: #bcd87a;
+    width: 100% !important;
+}
+
+table td>span.p-highlight:has(.range-between-date) {
+    background: #f7f9fa !important;
+    font-weight: 300;
+    border-radius: 0px
+}
+
+table td>span.p-highlight.p-disabled {
+    background: none !important;
+}
+
+table td>span.p-highlight:has(span.p-disabled) {
+    background: none !important;
+}
+
+.p-datepicker .p-datepicker-header {
+    border-bottom: none;
+}
+
+.p-datepicker.p-datepicker-multiple-month .p-datepicker-group {
+    border-left: none;
 }
 
 .calendar-grid {
