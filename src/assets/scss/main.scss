@@ -255,3 +255,50 @@ table td>span.p-highlight:has(span.p-disabled) {
 .p-datepicker.p-datepicker-multiple-month .p-datepicker-group {
     border-left: none;
 }
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 32px 29px 34px !important;
+}
+
+.week-card {
+  min-height: 150px;
+  max-height: 580px;
+  border: 1px solid #eaeeef;
+  margin-top: 10px;
+  padding: 7.5px 3.5px;
+
+  .calendar-footer {
+    border-top: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .calendar-col {
+      flex: 2;
+      padding: 7.5px 3.5px 7.5px 3.5px;
+      font-size: 13px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #c4c7cf;
+      padding-top: 40px !important;
+      .calendar-item {
+        display: flex;
+      }
+    }
+  }
+}
+
+.prime-tooltip {
+  &:before {
+      content:none;
+  }
+
+  &:after {
+      content:none;
+  }
+
+}
