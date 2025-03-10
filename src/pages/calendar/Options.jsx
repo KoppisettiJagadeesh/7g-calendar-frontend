@@ -227,7 +227,7 @@ const CalendarOptions = () => {
     }
   }
   return (
-    <div className="col-12 flex justify-content-center align-items-center p-0">
+    <div className="col-12 flex justify-content-center align-items-center p-0 bg-white">
       <div className='col-6 flex justify-content-start align-items-center'>
         <div className='calendar-left-side'>
           <button type="button" className="reset-btn arrow-btn">
