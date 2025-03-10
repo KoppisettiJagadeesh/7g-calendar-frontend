@@ -3,6 +3,8 @@ import { CalendarContext } from './Calendar.Context';
 import Month from './Month';
 import Week from './Week';
 import Day from './Day';
+// import "../../assets/scss/protean-colors.scss"
+// import "../../assets/scss/protean-calendar.scss"
 const CalendarView = () => {
   const { calendarType, selectedDate } = useContext(CalendarContext);
   console.log(calendarType, selectedDate);

@@ -4,7 +4,7 @@ import Date from './Date';
 import { WeekData } from './data'
 const Week = () => {
     const moment = require("moment");
-    const { selectedDate } = useContext(CalendarContext);
+    const { selectedDate,updateCalendarType ,updateSelectedDate} = useContext(CalendarContext);
     const [weekDays, setWeekDays] = useState([]);
     useEffect(() => {
         let today = selectedDate ? moment(selectedDate) : moment();
@@ -20,6 +20,11 @@ const Week = () => {
         let diffInDays = dateToCheck.diff(today, "days");
         return diffInDays === 0 ? "current" : "false";
     }
+    const moveToDate=(value)=>{
+        updateCalendarType({ name: 'Day', code: 'Day' });
+        updateSelectedDate(value);
+        console.log(value)
+    }
     return (
         <>
             <div className="d-flex align-items-center justify-content-start flex-wrap calendar  calendar-grid" >
@@ -28,7 +33,7 @@ const Week = () => {
                         <div key={index} className="calendar-header mb-1">
                             <div className="calendar-col">
                                 <div className="d-inline-flex">
-                                    <a className={`${getIsCurrent(day?.date)} active`}> {day?.day}</a>
+                                    <button className={`${getIsCurrent(day?.date)} active`} onClick={()=>{moveToDate(day?.date)}}> {day?.day}</button>
                                 </div>
                             </div>
                         </div>

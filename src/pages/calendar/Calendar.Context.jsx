@@ -4,6 +4,7 @@ const CalendarProvider = ({ children }) => {
   const [calendarType, setCalendarType] = useState({ name: 'Week', code: 'Week' });
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [activeEventTab, setActiveEventTab] = useState(0);
 
   const updateCalendarType = type => {
     setCalendarType(type);
@@ -11,7 +12,10 @@ const CalendarProvider = ({ children }) => {
   const updateSelectedDate = date => {
     setSelectedDate(date);
   };
-  return <CalendarContext.Provider value={{ calendarType, updateCalendarType, updateSelectedDate, selectedDate }}>{children}</CalendarContext.Provider>;
+  const handleEventTypeTabChange = (e) => {
+    setActiveEventTab(e.index);
+};
+  return <CalendarContext.Provider value={{ calendarType, updateCalendarType, updateSelectedDate, selectedDate ,handleEventTypeTabChange,activeEventTab}}>{children}</CalendarContext.Provider>;
 };
 
 export { CalendarProvider, CalendarContext };
