@@ -23,7 +23,6 @@ const CalendarOptions = () => {
     Day: [new Date()],
   });
   const calendarRef = useRef(null);
-  const [selectedCalendarType, setCalendarType] = useState(null);
   const [inputMaskValue, setInputMaskValue] = useState({
     Month: [new Date()],
     Week: [
@@ -32,7 +31,14 @@ const CalendarOptions = () => {
     ],
     Day: [new Date()],
   });
-  const [leftSideCalendar,setLeftSideCalendar] = useState([new Date()])
+  const [currentDate, setCurrentDate] = useState({
+    Month: [new Date()],
+    Week: [
+      new Date(new Date().setDate(new Date().getDate() - 7)),
+      new Date(),
+    ],
+    Day: [new Date()],
+  })
   const [showCalendar, setShowCalendar] = useState(false);
   const calendarTypeDD = [
     { name: 'Month', code: 'Month' },
@@ -49,6 +55,60 @@ const CalendarOptions = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleOnApplyDate = (datetype, date) => {
+    setCurrentDate((prevState) => ({
+      ...prevState,
+      [datetype]: date[datetype],
+    }));
+    setShowCalendar(false)
+  };
+  const getCurrentDate = (datetype, date) => {
+    const selectedDate = datetype === "Week" ? date["Week"][0] : date[datetype];
+    if (!selectedDate) return "";
+    const formatMap = {
+      Month: "MMMM YYYY",
+      Week: "MMMM YYYY",
+      Day: "dddd D",
+    };
+
+    return moment(new Date(selectedDate)).format(formatMap[datetype]);
+  };
+  const getCurrentWeek = (datetype, date) => {
+    const selectedDate = datetype === "Week" ? date["Week"][0] : date[datetype];
+    if (!selectedDate) return "";
+    const weekNumber = moment(new Date(selectedDate)).isoWeek();
+    return `Week ${weekNumber}`;
+  };
+
+  const updateStates = (datetype, value) => {
+    const dateValue = datetype === "Week" ? value : [value];
+    setDates((prev) => ({ ...prev, [datetype]: dateValue }));
+    setCurrentDate((prev) => ({ ...prev, [datetype]: dateValue }));
+    setInputMaskValue((prev) => ({ ...prev, [datetype]: dateValue }));
+  };
+
+  const updateWeek = (selectedDate, operation) => {
+    const adjustedDate = moment(selectedDate)[operation](1, "week").toDate();
+    return [
+      startOfWeek(adjustedDate, { weekStartsOn: 0 }),
+      endOfWeek(adjustedDate, { weekStartsOn: 0 }),
+    ];
+  };
+  const dateChangeHandler = (datetype, date, operation) => {
+    if (!date || !date[datetype]) return;
+
+    let selectedDate = new Date(datetype === "Week" ? date["Week"][operation === "add" ? 1 : 0] : date[datetype]);
+
+    if (datetype === "Week") {
+      updateStates(datetype, updateWeek(selectedDate, operation));
+    } else {
+      const unitMap = { Month: "month", Day: "day" };
+      updateStates(datetype, moment(selectedDate)[operation](1, unitMap[datetype]).toDate());
+    }
+  };
+  const handlePreviousClick = (datetype, date) => dateChangeHandler(datetype, date, "subtract");
+  const handleNextClick = (datetype, date) => dateChangeHandler(datetype, date, "add");
 
   const handleDropDownChange = e => {
     updateCalendarType(e.value);
@@ -68,7 +128,7 @@ const CalendarOptions = () => {
       },
     };
 
-    return placeholders[placeholderType]?.[dateType] || ""; // Default return value if not found
+    return placeholders[placeholderType]?.[dateType] || "";
   };
   const getViewDateFormate = (dateType, viewDateFormate) => {
     const formate = {
@@ -141,7 +201,6 @@ const CalendarOptions = () => {
         const year = parseInt(monthMatch[1], 10);
         const month = parseInt(monthMatch[2], 10) - 1;
         const selectedDate = new Date(year, month, 1);
-        console.log([selectedDate])
         if (!isNaN(selectedDate.getTime())) {
           setDates((prevState) => ({
             ...prevState,
@@ -172,7 +231,6 @@ const CalendarOptions = () => {
     const selected = e?.value;
     const dateType = calendarType.name;
     let value = selected;
-    // console.log(selected, dateType)
     if (!value) return;
     if (!Array.isArray(value)) {
       value = [value];
@@ -208,11 +266,11 @@ const CalendarOptions = () => {
 
   const footerTemplate = () => {
     return (
-      <div class="flex justify-content-end mt-3 gap-3 false">
-        <button type="button" class="protean-btn cursor-pointer" onClick={() => setShowCalendar(false)}>
+      <div className="flex justify-content-end mt-3 gap-3 false">
+        <button type="button" className="protean-btn cursor-pointer" onClick={() => setShowCalendar(false)}>
           Cancel
         </button>
-        <button type="button" class="protean-btn cursor-pointer protean-btn-default">
+        <button type="button" className="protean-btn cursor-pointer protean-btn-default" onClick={() => handleOnApplyDate(calendarType.name, dates)}>
           Apply
         </button>
       </div>
@@ -223,28 +281,29 @@ const CalendarOptions = () => {
       return `custom-picker-protean range ${showCalendar ? "block" : "hidden"}`
     }
     else {
-      return `custom-picker-protean ${showCalendar ? "block" : "hidden"}`
+      return `custom-picker-protean calender-size ${showCalendar ? "block" : "hidden"}`
     }
   }
   return (
     <div className="col-12 flex justify-content-center align-items-center p-0 bg-white">
       <div className='col-6 flex justify-content-start align-items-center'>
         <div className='calendar-left-side'>
-          <button type="button" className="reset-btn arrow-btn">
+          <button type="button" className="reset-btn arrow-btn" onClick={() => handlePreviousClick(calendarType.name, currentDate)}>
             <ArrowLeftIcon />
           </button>
-          <span className="current">March 2025</span>
-          <button type="button" className="reset-btn arrow-btn">
+          <span className="current">{getCurrentDate(calendarType.name, currentDate)}</span>
+          <button type="button" className="reset-btn arrow-btn" onClick={() => handleNextClick(calendarType.name, currentDate)}>
             <ArrowRightIcon />
           </button>
-          <span className="week">Week 11</span>
-          <InfoCalanderIcon className='cursor-pointer'/>
+          <span className="week">{getCurrentWeek(calendarType.name, currentDate)}</span>
+          <InfoCalanderIcon className='cursor-pointer' />
         </div>
       </div>
       <div className='col-6 flex justify-content-end align-items-center'>
         <div className="flex flex-column pr-3">
           <div className='mb-3'></div>
           <Dropdown
+            key={"code"}
             placeholder="Month"
             value={calendarType}
             onChange={handleDropDownChange}

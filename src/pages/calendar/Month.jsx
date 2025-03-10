@@ -6,7 +6,7 @@ const Month = () => {
     const [monthDays, setMothDays] = useState({ days: [], startWeek: [], endWeek: [] });
     const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     useEffect(() => {
-        let today = selectedDate ? moment(selectedDate) : moment();
+        let today = selectedDate ? moment(new Date(selectedDate)) : moment();
         let days = [];
         for (let i = 0; i < today.daysInMonth(); i++) {
             let day = today.clone().startOf('month').add(i, 'days');

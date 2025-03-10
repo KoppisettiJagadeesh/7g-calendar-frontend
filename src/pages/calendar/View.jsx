@@ -7,7 +7,6 @@ import Day from './Day';
 // import "../../assets/scss/protean-calendar.scss"
 const CalendarView = () => {
   const { calendarType, selectedDate } = useContext(CalendarContext);
-  console.log(calendarType, selectedDate);
   if (calendarType.name == 'Month')
     return (
       <div className="bg-white">
