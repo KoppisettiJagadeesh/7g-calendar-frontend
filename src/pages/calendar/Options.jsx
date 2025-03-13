@@ -12,34 +12,21 @@ import { InputMask } from 'primereact/inputmask';
 import moment from "moment";
 import { addDays, format, startOfWeek, endOfWeek, parseISO } from "date-fns";
 
+const getDefaultDates = () => ({
+  Month: [new Date()],
+  Week: [moment().startOf("week").toDate(), moment().endOf("week").toDate()],
+  Day: [new Date()],
+});
+
 const CalendarOptions = () => {
   const { updateCalendarType, calendarType, updateSelectedDate } = useContext(CalendarContext);
-  const [dates, setDates] = useState({
-    Month: [new Date()],
-    Week: [
-      new Date(new Date().setDate(new Date().getDate() - 7)),
-      new Date(),
-    ],
-    Day: [new Date()],
-  });
+
   const calendarRef = useRef(null);
-  const [inputMaskValue, setInputMaskValue] = useState({
-    Month: [new Date()],
-    Week: [
-      new Date(new Date().setDate(new Date().getDate() - 7)),
-      new Date(),
-    ],
-    Day: [new Date()],
-  });
-  const [currentDate, setCurrentDate] = useState({
-    Month: [new Date()],
-    Week: [
-      new Date(new Date().setDate(new Date().getDate() - 7)),
-      new Date(),
-    ],
-    Day: [new Date()],
-  })
   const [showCalendar, setShowCalendar] = useState(false);
+  const [dates, setDates] = useState(getDefaultDates);
+  const [currentDate, setCurrentDate] = useState(getDefaultDates);
+  const [inputMaskValue, setInputMaskValue] = useState(getDefaultDates);
+
   const calendarTypeDD = [
     { name: 'Month', code: 'Month' },
     { name: 'Week', code: 'Week' },
@@ -61,6 +48,7 @@ const CalendarOptions = () => {
       ...prevState,
       [datetype]: date[datetype],
     }));
+    updateSelectedDate(date[datetype]);
     setShowCalendar(false)
   };
   const getCurrentDate = (datetype, date) => {
@@ -110,7 +98,18 @@ const CalendarOptions = () => {
   const handlePreviousClick = (datetype, date) => dateChangeHandler(datetype, date, "subtract");
   const handleNextClick = (datetype, date) => dateChangeHandler(datetype, date, "add");
 
-  const handleDropDownChange = e => {
+  const handleDropDownChange = (e) => {
+    const { name } = e.target.value;
+    let dateValue = [];
+  
+    if (name === "Month") {
+      dateValue = [moment().startOf("month").toDate()];
+    } else if (name === "Week") {
+      dateValue = [moment().startOf("week").toDate(), moment().endOf("week").toDate()];
+    } else if (name === "Day") {
+      dateValue = [new Date()];
+    }
+    updateSelectedDate(dateValue);
     updateCalendarType(e.value);
   };
 
@@ -162,10 +161,11 @@ const CalendarOptions = () => {
         return `${month}/${day}/${year}`;
       }
       const day = String(modifiedDate.getDate()).padStart(2, "0");
-      return `${day}/${month}/${year}`;
+      return `${month}/${day}/${year}`;
     })
       .join(dateType === "Week" ? " - " : " ");
   }
+
   const handleInputMaskChange = (e, dateType) => {
     const inputValue = e.target.value;
     setInputMaskValue((prevState) => ({
@@ -240,8 +240,6 @@ const CalendarOptions = () => {
     }
     setDates(prevState => ({ ...prevState, [dateType]: value }));
     setInputMaskValue(prevState => ({ ...prevState, [dateType]: value }));
-
-    updateSelectedDate(value);
   };
   const dateTemplate = (date, dateType) => {
     if (date.selectable) {
@@ -284,6 +282,12 @@ const CalendarOptions = () => {
       return `custom-picker-protean calender-size ${showCalendar ? "block" : "hidden"}`
     }
   }
+  const handleTodayDate=()=>{
+    updateCalendarType({ name: 'Day', code: 'Day' });
+    setDates(prevState=>({...prevState,Day:[new Date()]}))
+    setCurrentDate(prevState=>({...prevState,Day:[new Date()]}))
+    setInputMaskValue(prevState=>({...prevState,Day:[new Date()]}))
+  }
   return (
     <div className="col-12 flex justify-content-center align-items-center p-0 bg-white">
       <div className='col-6 flex justify-content-start align-items-center'>
@@ -316,18 +320,23 @@ const CalendarOptions = () => {
           <div>
             <div className="flex custome-calender-group w-auto bg-white" id='calenderGroup'>
               <InputMask
+                id='inputMask'
                 value={
                   typeof inputMaskValue[calendarType?.name] === "string"
                     ? inputMaskValue[calendarType?.name]
                     : formateInputMaskValue(inputMaskValue[calendarType?.name], calendarType.name)
                 }
-                onClick={() => setShowCalendar(true)}
+                onClick={() => {
+                  const input = document.querySelector("#inputMask");
+                  input?.blur();
+                  setShowCalendar(true)
+                }}
+                key={calendarType.name}
                 onChange={(e) => handleInputMaskChange(e, calendarType.name)}
                 className="w-100 fw-bold pe-4 text-start position-relative"
                 tabIndex="0"
                 placeholder={getPlaceholders(calendarType.name, "Placeholder")}
                 mask={getPlaceholders(calendarType.name, "Mask")}
-                autoFocus
               />
               <div className="flex items-center gap-2 mr-3 bg-white">
                 <CloseIcon
@@ -357,6 +366,7 @@ const CalendarOptions = () => {
             <div className="card flex justify-content-center">
               <Calendar
                 id="cldWeek"
+                key={calendarType.name}
                 className={getCalenderStyles(calendarType.name)}
                 value={calendarType.name === "Week" ? dates[calendarType.name] : new Date(dates[calendarType.name])}
                 onChange={handleDateChange}
@@ -378,9 +388,7 @@ const CalendarOptions = () => {
           <Button
             label="Today"
             className="protean-btn"
-            onClick={e => {
-              updateCalendarType({ name: 'Day', code: 'Day' });
-            }}
+            onClick={()=>handleTodayDate()} 
           ></Button>
         </div>
         <div className="flex flex-column pr-3">

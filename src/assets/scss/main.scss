@@ -260,6 +260,27 @@ table td>span.p-highlight:has(span.p-disabled) {
     border-left: none;
 }
 
+.p-monthpicker{
+  padding: 5px;
+}
+.p-datepicker .p-monthpicker .p-monthpicker-month {
+  padding: 6px;
+  border-radius: 4px;
+  outline: none;
+  width: 77px;
+  height: 50px;
+  font-weight: 500;
+}
+.p-datepicker .p-monthpicker .p-monthpicker-month.p-highlight {
+  color: #585858;
+  background: #bcd87a;
+}
+.p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-disabled):focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none; 
+}
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

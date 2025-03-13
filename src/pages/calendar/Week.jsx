@@ -4,10 +4,10 @@ import Date from './Date';
 import { WeekData } from './data'
 const Week = () => {
     const moment = require("moment");
-    const { selectedDate,updateCalendarType ,updateSelectedDate} = useContext(CalendarContext);
+    const { selectedDate, updateCalendarType, updateSelectedDate } = useContext(CalendarContext);
     const [weekDays, setWeekDays] = useState([]);
     useEffect(() => {
-        let today = selectedDate ? moment(selectedDate) : moment();
+        let today = selectedDate ? moment(selectedDate[0]) : moment();
         let days = [];
         for (let i = 0; i < 7; i++) {
             let day = today.clone().startOf('week').add(i, 'days');
@@ -20,10 +20,9 @@ const Week = () => {
         let diffInDays = dateToCheck.diff(today, "days");
         return diffInDays === 0 ? "current" : "false";
     }
-    const moveToDate=(value)=>{
+    const moveToDate = (value) => {
         updateCalendarType({ name: 'Day', code: 'Day' });
         updateSelectedDate(value);
-        console.log(value)
     }
     return (
         <>
